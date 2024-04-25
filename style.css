@@ -47,26 +47,13 @@ header button {
 #list {
     display: inline-block;
     height: 70vh;
+    width: 90%;
+    padding: 5%;
 }
 
 
 ul li {
     list-style: none;
-}
-
-.task, .detail-container {
-    display: flex;
-}
-
-.task {
-    flex: 1;
-    justify-content: space-between;
-    align-items: center;
-    padding-bottom: 3em;
-}
-
-.taskName {
-    padding-left: 1em;
 }
 
 #fileInput {
@@ -78,4 +65,42 @@ ul li {
         width: 720px;
         min-height: 100vh;
     }
+}
+
+/* Item styling */
+.checkbox {
+    width: 24px;
+    height: 24px;
+}
+
+.description {  
+    grid-column-start: 3;
+    grid-column-end: 5;
+    border-width: 3px;
+    border-radius: 10px;
+    border-style: solid;
+    padding: 1em;
+    margin: 5px;
+}
+
+.due-date {
+    display: block;
+    margin: 5px;
+}
+
+.task, .detail-container {
+    display: grid;
+    grid-template-columns: 10% 10% 40% 40%;
+}
+
+.task {
+    flex: 1;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 0.5em;
+}
+
+.taskName {
+    padding-left: 1em;
+    margin: 5px;
 }
