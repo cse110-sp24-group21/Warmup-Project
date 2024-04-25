@@ -20,9 +20,9 @@ hr {
 }
 
 header {
-    padding-left: 2vw;
-    padding-right: 2vw;
-    padding-top: 1vh;
+    padding-left: 2em;
+    padding-right: 2em;
+    padding-top: 1em;
     justify-content: center;
     align-items: center;
     display: flex;
@@ -34,15 +34,46 @@ header h1, button {
 
 header button {
     max-width: 5vw;
+    min-width: 10em;
     height: 20%;
 }
 
+.list-container {
+    height: 70vh;
+}
+
+#list {
+    display: inline-block;
+    height: 70vh;
+}
 
 
+ul li {
+    list-style: none;
+}
+
+.task, .detail-container {
+    display: flex;
+}
+
+.task {
+    flex: 1;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 3em;
+}
+
+.taskName {
+    padding-left: 1em;
+}
+
+#fileInput {
+    display: none;
+}
 
 @media (max-width: 480px) {
     .element {
-        width: 100%;
+        width: 720px;
         min-height: 100vh;
     }
 }
