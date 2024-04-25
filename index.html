@@ -9,6 +9,59 @@
     <script src="script.js"></script>
 </head>
 <body>
+    <div class="container">
+        <header>
+            <!-- Title + Button Stuff -->
+            <h1>Task List</h1>
+            <button id="upload-file">Upload Data</button>
+            <input type="file" id="fileInput" accept=".json">
+        </header>
+        <hr>
+        <main>
+            <!-- List: have a minimum height (vh) -->
+            <div class="list-container">
+                <ul id="list">
+                    <li class="task">
+                        <img src="images/triangle-right.svg" alt="Task Icon" class="task-icon">
+                        <input class="checkbox" type="checkbox">
+                        <h3 class="taskName">Task 1</h5>
+                        <p class="due-date">Apr 24, 2024</p>
+                        <p class="description" style="display: none;">This is an example of when the dropdown is pressed and the description is shown.</p>
+                    </li>
+                    <li class="task">
+                        <img src="images/triangle-down.svg" alt="Task Icon" class="task-icon">
+                        <input class="checkbox" type="checkbox">
+                        <h3 class="taskName">Task 1</h5>
+                        <p class="due-date">Apr 24, 2024</p>
+                        <p class="description">This is an example of when the dropdown is pressed and the description is shown.</p>
+                    </li>
+                    <li class="task">
+                        <img src="images/triangle-down.svg" alt="Task Icon" class="task-icon">
+                        <input class="checkbox" type="checkbox">
+                        <h3 class="taskName">Task 1</h5>
+                        <p class="due-date">Apr 24, 2024</p>
+                        <p class="description">This is an example of when the dropdown is pressed and the description is shown.</p>
+                    </li>
+                    <li class="task">
+                        <img src="images/triangle-down.svg" alt="Task Icon" class="task-icon">
+                        <input class="checkbox" type="checkbox">
+                        <h3 class="taskName">Task 1</h5>
+                        <p class="due-date">Apr 24, 2024</p>
+                        <p class="description">Not much text</p>
+                    </li>
+                    
+                    <!-- Will include Title, due date, label (display), drop-down description -->
+                    <!-- tasks = document.getElementsByClass("taskName"); a list of taskNames
+                        for(int i = 1; i <= json.length(); i++) {
+                            document.getElementById("task-" + i).innerHTML = JSON[i-1]["taskName"];
+                        } -->
     
+                </ul>
+            </div>
+        </main>
+        <footer>
+            <!-- Copyright Stuff -->
+        </footer>
+    </div>
 </body>
 </html>
