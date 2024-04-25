@@ -1,0 +1,48 @@
+/* Screen Structure Size */
+* {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+}
+
+.container {
+    border-style:double;
+    border-color: grey;
+    height: 95vh;
+    min-width: 480px;
+}
+
+hr {
+    width: 85%;
+}
+
+header {
+    padding-left: 2vw;
+    padding-right: 2vw;
+    padding-top: 1vh;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+
+header h1, button {
+    flex:auto;
+}
+
+header button {
+    max-width: 5vw;
+    height: 20%;
+}
+
+
+
+
+@media (max-width: 480px) {
+    .element {
+        width: 100%;
+        min-height: 100vh;
+    }
+}

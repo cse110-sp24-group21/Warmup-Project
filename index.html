@@ -9,56 +9,59 @@
     <script src="script.js"></script>
 </head>
 <body>
-    <header>
-        <!-- Title + Button Stuff -->
-        <h1>Task List</h1>
-        <button id="upload-file"></button>
-    </header>
-    <main>
-        <!-- List: have a minimum height (vh) -->
-        <div class="list-container">
-            <ul id="list">
-                <li class = "task" id="task-1">
-                    <div class="checkbox" id="check-1">
-                        <input type="checkbox">
-                    </div>
-                    <div class="taskName" id="name-1">Task 1</div>
-                    <div class="due-date" id="due-1">Apr 24, 2024</div>
-                    <div class="label" id="label-1">Dumb stuff</div>
-                    <div class="drop-down" id="desc-1"></div>
-                </li>
-                <li class = "task" id="task-2">
-                    <div class="checkbox" id="check-1">
-                        <input type="checkbox">
-                    </div>
-                    <div class="checkbox" id="check-2"></div>
-                    <div class="taskName" id="name-2">Task 2</div>
-                    <div class="due-date" id="due-2">Apr 24, 2024</div>
-                    <div class="label" id="label-2">Dumb stuff</div>
-                    <div class="drop-down" id="desc-2"></div>
-                </li>
-                <li class = "task" id="task-3">
-                    <div class="checkbox" id="check-3">
-                        <input type="checkbox">
-                    </div>
-                    <div class="checkbox" id="check-3"></div>
-                    <div class="taskName" id="name-3">Task 3</div>
-                    <div class="due-date" id="due-3">Apr 25, 2024</div>
-                    <div class="label" id="label-3">Dumb stuff</div>
-                    <div class="drop-down" id="desc-3"></div>
-                </li>
-                
-                <!-- Will include Title, due date, label (display), drop-down description -->
-                <!-- tasks = document.getElementsByClass("taskName"); a list of taskNames
-                    for(int i = 1; i <= json.length(); i++) {
-                        document.getElementById("task-" + i).innerHTML = JSON[i-1]["taskName"];
-                    } -->
-
-            </ul>
-        </div>
-    </main>
-    <footer>
-        <!-- Copyright Stuff -->
-    </footer>
+    <div class="container">
+        <header>
+            <!-- Title + Button Stuff -->
+            <h1>Task List</h1>
+            <button id="upload-file">Upload File</button>
+        </header>
+        <hr>
+        <main>
+            <!-- List: have a minimum height (vh) -->
+            <div class="list-container">
+                <ul id="list">
+                    <li class = "task" id="task-1">
+                        <div class="checkbox" id="check-1">
+                            <input type="checkbox">
+                        </div>
+                        <div class="taskName" id="name-1">Task 1</div>
+                        <div class="due-date" id="due-1">Apr 24, 2024</div>
+                        <div class="label" id="label-1">Dumb stuff</div>
+                        <div class="drop-down" id="desc-1"></div>
+                    </li>
+                    <li class = "task" id="task-2">
+                        <div class="checkbox" id="check-1">
+                            <input type="checkbox">
+                        </div>
+                        <div class="checkbox" id="check-2"></div>
+                        <div class="taskName" id="name-2">Task 2</div>
+                        <div class="due-date" id="due-2">Apr 24, 2024</div>
+                        <div class="label" id="label-2">Dumb stuff</div>
+                        <div class="drop-down" id="desc-2"></div>
+                    </li>
+                    <li class = "task" id="task-3">
+                        <div class="checkbox" id="check-3">
+                            <input type="checkbox">
+                        </div>
+                        <div class="checkbox" id="check-3"></div>
+                        <div class="taskName" id="name-3">Task 3</div>
+                        <div class="due-date" id="due-3">Apr 25, 2024</div>
+                        <div class="label" id="label-3">Dumb stuff</div>
+                        <div class="drop-down" id="desc-3"></div>
+                    </li>
+                    
+                    <!-- Will include Title, due date, label (display), drop-down description -->
+                    <!-- tasks = document.getElementsByClass("taskName"); a list of taskNames
+                        for(int i = 1; i <= json.length(); i++) {
+                            document.getElementById("task-" + i).innerHTML = JSON[i-1]["taskName"];
+                        } -->
+    
+                </ul>
+            </div>
+        </main>
+        <footer>
+            <!-- Copyright Stuff -->
+        </footer>
+    </div>
 </body>
 </html>
