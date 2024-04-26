@@ -176,6 +176,20 @@ function toggleIcon(el) {
     }
 }
 
+let checkbox = document.querySelectorAll(".checkbox");
+let taskName = document.querySelectorAll(".taskName");
+
+checkbox.forEach((current, idx) => {
+    current.addEventListener("change", () => {
+        if(current.checked){
+            taskName[idx].classList.add("strikethrough");
+        } else{
+            taskName[idx].classList.remove("strikethrough");
+        }
+    });
+} );
+
+
 function display(taskData) {
     const listTitle=document.getElementsByClassName("title");
     listTitle[0].innerHTML=taskData.title;
