@@ -6,7 +6,6 @@ const colorBtnImg = document.getElementById("color-mode");
 let containerElem = document.getElementsByClassName("container")[0];
 let taskIcons = document.getElementsByClassName("task-icon");
 
-
 // Color change function based on current color mode
 function colorChange() {
     if(containerElem.classList[1] == "light-mode") {
@@ -49,28 +48,26 @@ function colorChange() {
 function toggleIcon(el) {
     const task = el.parentNode;
     const description = task.getElementsByClassName('description')[0];
-    if (el.classList[1] == 'light-mode-icon'){
-        if (el.classList[2] == 'down-icon') {
+    //change from down to right
+    if (el.classList[2] == 'down-icon') {
+        el.classList.replace('down-icon', 'right-icon');
+        description.style.display = 'none';
+        if (el.classList[1] == 'light-mode-icon') {
             el.src = 'images/triangle-right-black.svg';
-            el.classList.replace('down-icon', 'right-icon')
-            description.style.display = 'none';
         }
         else {
-            el.src = 'images/triangle-down-black.svg';
-            el.classList.replace('right-icon', 'down-icon')
-            description.style.display = 'block';
+            el.src = 'images/triangle-right-white.svg';
         }
     }
+    // change from right to down
     else {
-        if (el.classList[2] == 'down-icon') {
-            el.src = 'images/triangle-right-white.svg';
-            el.classList.replace('down-icon', 'right-icon')
-            description.style.display = 'none';
+        el.classList.replace('right-icon', 'down-icon')
+        description.style.display = 'block';
+        if (el.classList[1] == 'light-mode-icon') {
+            el.src = 'images/triangle-down-black.svg';
         }
         else {
             el.src = 'images/triangle-down-white.svg';
-            el.classList.replace('right-icon', 'down-icon')
-            description.style.display = 'block';
         }
     }
 }
@@ -78,20 +75,15 @@ function toggleIcon(el) {
 /* WORK IN PROGRESS */
 
 /* Upload JSON file and store in data directory */
-const fileUpload = document.getElementById("upload-file");
-const fileStream = document.getElementById("fileInput");
-
-fileUpload.addEventListener('click', function() {
-    fileStream.click();
-});
-
-fileStream.addEventListener('change', function(event) {
-    const newFile = event.target.files[0];
+function upload() {
+    document.getElementById('fileInput').click();
+    const fileStream = document.getElementById('fileInput');
+    const newFile = fileStream.target.files[0];
     if (newFile && newFile.type == 'application/json') {
         const r = new FileReader();
         // will implement (first read raw JSON)
     }
-});
+}
 
 function display(taskData) {
     const listContainer = document.getElementById("list");
