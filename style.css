@@ -189,13 +189,8 @@ footer a:hover {
     body{
         background-color: #0C1121;
     }
-    .light-icon{
-        display: none;
-    }
-    .dark-icon{
-        display: block;
-    }
 }
+
 @media (prefers-color-scheme: light) {
     .container {
         background-color: white;
@@ -203,11 +198,5 @@ footer a:hover {
     }
     body{
         background-color: white;
-    }
-    .light-icon{
-        display: block;
-    }
-    .dark-icon{
-        display: none;
     }
 }
