@@ -176,19 +176,25 @@ function toggleIcon(el) {
     }
 }
 
-let checkbox = document.querySelectorAll(".checkbox");
-let taskName = document.querySelectorAll(".taskName");
+//updates all checkBoxs to have strikethrough functionality 
+function strikeName(){
 
-checkbox.forEach((current, idx) => {
-    current.addEventListener("change", () => {
-        if(current.checked){
-            taskName[idx].classList.add("strikethrough");
-        } else{
-            taskName[idx].classList.remove("strikethrough");
-        }
-    });
-} );
+    let checkbox = document.querySelectorAll(".checkbox");
+    let taskName = document.querySelectorAll(".taskName");
 
+    checkbox.forEach((current, idx) => {
+        current.addEventListener("change", () => {
+            if(current.checked){
+                taskName[idx].classList.add("strikethrough");
+            } else{
+                taskName[idx].classList.remove("strikethrough");
+            }
+        });
+    } );
+};
+
+//makes default page have strikethrough functionality
+strikeName();
 
 function display(taskData) {
     const listTitle=document.getElementsByClassName("title");
@@ -208,4 +214,6 @@ function display(taskData) {
                 + '<p class="description" style="display: none;">' + taskData.data[i].details + '</p>'
                 + '</li>';
     }
+    //updates all new checkboxes with strikethrough functionality
+    strikeName();
 }
