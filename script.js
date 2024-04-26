@@ -9,6 +9,9 @@ function importData() {
         let file = input.files[0];
         // Check if the file type is JSON or if the file name ends with ".json"
         // The console logging is temporary and will be replaced with shown text
+        const errorArea = document.getElementById("error");
+        errorArea.innerHTML = "";
+
         if (file.type === 'application/json' || file.name.endsWith('.json')) {
             // We are given a JSON file and can't save it without some server side code, so I will just verify it and send it to the display function
             const reader = new FileReader();
@@ -30,14 +33,14 @@ function importData() {
                 }
                 else {
                     // Something is wrong, return error
-                    console.log("I don't know what type it is");
+                    errorArea.innerHTML = 'JSON file is not an object or Array';
                 }
             };
 
             reader.readAsText(file);
         }
         else {
-            console.log('File is not a JSON file.');
+            errorArea.innerHTML = 'File is not a JSON file.';
         }
     };
 
