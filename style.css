@@ -176,7 +176,9 @@ footer a:hover {
     text-decoration: underline;
 }
 
-
+.strikethrough {
+    text-decoration: line-through;
+}
 
 /* Dark mode */
 @media (prefers-color-scheme: dark) {

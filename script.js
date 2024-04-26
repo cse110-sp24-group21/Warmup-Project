@@ -53,3 +53,16 @@ function colorChange() {
         }
     }
 };
+
+let checkbox = document.querySelectorAll(".checkbox");
+let taskName = document.querySelectorAll(".taskName");
+
+checkbox.forEach((current, idx) => {
+    current.addEventListener("change", () => {
+        if(current.checked){
+            taskName[idx].classList.add("strikethrough");
+        } else{
+            taskName[idx].classList.remove("strikethrough");
+        }
+    });
+} );
