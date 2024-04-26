@@ -1,34 +1,14 @@
+// Code for Color Mode Switch Display
 
-/* Upload JSON file and store in data directory */
-const fileUpload = document.getElementById("upload-file");
-const fileStream = document.getElementById("fileInput");
-
-// fileUpload.addEventListener('click', function() {
-//     fileStream.click();
-// });
-
-// fileStream.addEventListener('change', function(event) {
-//     const newFile = event.target.files[0];
-//     if (newFile && newFile.type == 'application/json') {
-//         const r = new FileReader();
-//         // will implement (first read raw JSON)
-//     }
-// });
-
-// function display(taskData) {
-//     const listContainer = document.getElementById("list");
-//     listContainer.innerHTML = ''; // empty list
-//     // foreach loop through tasks
-// }
-
-
-
+// Extract elements
 let bodyElem = document.body;
 const colorBtnImg = document.getElementById("color-mode");
 let containerElem = document.getElementsByClassName("container")[0];
 let lightButtons = document.getElementsByClassName("light-icon");
 let darkButtons = document.getElementsByClassName("dark-icon");
 
+
+// Color change function based on current color mode
 function colorChange() {
     console.log(containerElem.classList[1]);
     console.log(bodyElem.classList[0]);
@@ -53,6 +33,7 @@ function colorChange() {
         bodyElem.classList.add("dark-mode");
     }
     else {
+        // change to light mode
         bodyElem.style.backgroundColor = "white";
         bodyElem.classList.remove("dark-mode");
         bodyElem.classList.add("light-mode");
@@ -72,23 +53,3 @@ function colorChange() {
         }
     }
 };
-
-// colorBtnImg.addEventListener("click", function() {
-//     if(containerElem.classList[1] == "light-mode") {
-//         // change to dark mode
-//         containerElem.style.backgroundColor = "#081236";
-//         containerElem.style.color = "white";
-//     }
-//     else {
-//         // change to light mode
-//         containerElem.style.backgroundColor = "white";
-//         containerElem.style.color = "black";
-//     }
-//     if(bodyElem.classList[0] == "light-mode") {
-//         // change to dark-mode
-//         bodyElem.style.backgroundColor = "#0C1121";
-//     }
-//     else {
-//         bodyElem.style.backgroundColor = "white";
-//     }
-// });
