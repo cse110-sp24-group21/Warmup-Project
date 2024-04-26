@@ -82,6 +82,7 @@ ul li {
     border-style: solid;
     padding: 1em;
     margin: 5px;
+    word-wrap: break-word;
 }
 
 .due-date {
