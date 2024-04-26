@@ -72,6 +72,7 @@ header button {
 
 .list-container {
     height: 70vh;
+    width: 80vh;
     overflow-x: hidden;
     overflow-y: auto;
 }
@@ -117,6 +118,7 @@ ul li {
     padding: 1em;
     margin: 5px;
     font-family: Inter;
+    word-wrap: break-word;
 }
 
 .due-date {
@@ -189,13 +191,8 @@ footer a:hover {
     body{
         background-color: #0C1121;
     }
-    .light-icon{
-        display: none;
-    }
-    .dark-icon{
-        display: block;
-    }
 }
+
 @media (prefers-color-scheme: light) {
     .container {
         background-color: white;
@@ -203,11 +200,5 @@ footer a:hover {
     }
     body{
         background-color: white;
-    }
-    .light-icon{
-        display: block;
-    }
-    .dark-icon{
-        display: none;
     }
 }
