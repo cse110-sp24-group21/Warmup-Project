@@ -6,66 +6,69 @@
     <title>Team 21 Task List</title>
     <!-- External Files -->
     <link rel="stylesheet" href="style.css">
-    <script src="script.js"></script>
+    <script src="script.js" defer></script>
+    <link href="https://fonts.googleapis.com/css2?family=Knewave&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Knewave&display=swap" rel="stylesheet">
 </head>
-<body>
-    <div class="container">
+<body class="light-mode">
+    <div class="container light-mode" id="container">
         <header>
             <!-- Title + Button Stuff -->
-            <h1>Task List</h1>
-            <button id="upload-file">Upload Data</button>
-            <input type="file" id="fileInput" accept=".json">
+            <h1 class="title">Task List</h1>
+            <div class="header-buttons">
+                <img src="images/darkmode.png" alt="Change Color Mode" id="color-mode" onclick="colorChange()">
+                <img src="images/upload-file.png" alt="Upload File" id="upload-image">
+            </div>
         </header>
         <hr>
         <main>
-            <!-- List: have a minimum height (vh) -->
+            <!-- Div container for styling and structuring list -->
             <div class="list-container">
+                <!-- List: have a minimum height (vh) -->
                 <ul id="list">
                     <li class="task">
-                        <img src="images/triangle-right.svg" alt="Task Icon" class="task-icon">
+                        <img src="images/triangle-right-black.svg" alt="Task Icon" class="task-icon light-icon">
+                        <img src="images/triangle-right-white.svg" style="display: none;" alt="Task Icon" class="task-icon dark-icon">
                         <input class="checkbox" type="checkbox">
-                        <h3 class="taskName">Task 1</h5>
-                        <p class="due-date">Apr 24, 2024</p>
-                        <p class="description" style="display: none;">This is an example of when the dropdown is pressed and the description is shown.</p>
+                            <h3 class="taskName">Task 1</h5>
+                            <p class="due-date">Apr 24, 2024</p>
+                            <p class="description" style="display: none;">This is an example of when the dropdown is pressed and the description is shown.</p>
                     </li>
                     <li class="task">
-                        <img src="images/triangle-down.svg" alt="Task Icon" class="task-icon">
+                        <img src="images/triangle-down-black.svg" alt="Task Icon" class="task-icon light-icon">
+                        <img src="images/triangle-down-white.svg" style="display: none;" alt="Task Icon" class="task-icon dark-icon">
                         <input class="checkbox" type="checkbox">
-                        <h3 class="taskName">Task 1</h5>
-                        <p class="due-date">Apr 24, 2024</p>
-                        <p class="description">This is an example of when the dropdown is pressed and the description is shown.</p>
-                    </li>
-                    <li class="task">
-                        <img src="images/triangle-down.svg" alt="Task Icon" class="task-icon">
-                        <input class="checkbox" type="checkbox">
-                        <h3 class="taskName">Task 1</h5>
+                        <h3 class="taskName">Task 2</h5>
                         <p class="due-date">Apr 24, 2024</p>
                         <p class="description">This is an example of when the dropdown is pressed and the description is shown.</p>
                     </li>
                     <li class="task">
-                        <img src="images/triangle-down.svg" alt="Task Icon" class="task-icon">
+                        <img src="images/triangle-down-black.svg" alt="Task Icon" class="task-icon light-icon">
+                        <img src="images/triangle-down-white.svg" style="display: none;" alt="Task Icon" class="task-icon dark-icon">
                         <input class="checkbox" type="checkbox">
-                        <h3 class="taskName">Task 1</h5>
+                        <h3 class="taskName">Task 3</h5>
+                        <p class="due-date">Apr 24, 2024</p>
+                        <p class="description">This is an example of when the dropdown is pressed and the description is shown.</p>
+                    </li>
+                    <li class="task">
+                        <img src="images/triangle-down-black.svg" alt="Task Icon" class="task-icon light-icon">
+                        <img src="images/triangle-down-white.svg" style="display: none;" alt="Task Icon" class="task-icon dark-icon">
+                        <input class="checkbox" type="checkbox">
+                        <h3 class="taskName">Task 4</h5>
                         <p class="due-date">Apr 24, 2024</p>
                         <p class="description">Not much text</p>
                     </li>
-                    
-                    <!-- Will include Title, due date, label (display), drop-down description -->
-                    <!-- tasks = document.getElementsByClass("taskName"); a list of taskNames
-                        for(int i = 1; i <= json.length(); i++) {
-                            document.getElementById("task-" + i).innerHTML = JSON[i-1]["taskName"];
-                        } -->
-    
                 </ul>
             </div>
         </main>
-        <footer>
-            <div class="footer-content">
-                <p>© 2024 9 plus 10. All rights reserved.</p>
-                <p>Email us at: <a href="mailto:support@9plus10.com">support@9plus10.com</a></p>
-                <p>Last updated on: <span id="last-updated">April 25, 2024</span></p>
-            </div>
-        </footer>
     </div>
+    <footer>
+        <!-- Footer -->
+        <div class="footer-content">
+            <p>© 2024 9 plus 10. All rights reserved.</p>
+            <p>Email us at: <a href="mailto:support@9plus10.com">support@9plus10.com</a></p>
+            <p>Last updated on: <span id="last-updated">April 25, 2024</span></p>
+        </div>
+    </footer>
 </body>
 </html>
