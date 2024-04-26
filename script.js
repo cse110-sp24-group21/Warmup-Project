@@ -190,7 +190,7 @@ function display(taskData) {
                 + arrow 
                 + '<input class="checkbox" type="checkbox">'
                 + '<h3 class="taskName">' + taskData.data[i].title + '</h3>'
-                + '<p class="due-date">'+ taskData.data[i].dueDate + '</p>';
+                + '<p class="due-date">'+ taskData.data[i].dueDate + '</p>'
                 + '<p class="description" style="display: none;">' + taskData.data[i].details + '</p>'
                 + '</li>';
     }
