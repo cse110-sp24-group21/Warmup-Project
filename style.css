@@ -40,6 +40,7 @@ header button {
 
 .list-container {
     height: 70vh;
+    width: 80vh;
     overflow-x: hidden;
     overflow-y: auto;
 }

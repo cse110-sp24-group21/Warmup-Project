@@ -34,7 +34,7 @@ document.addEventListener("DOMContentLoaded", function() {   // Need to wait unt
             }
             else {
                 taskIcon.src = './images/triangle-down.svg';
-                description.style.display = 'inline';
+                description.style.display = 'block';
             }
         });
     }
