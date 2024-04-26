@@ -1,14 +1,14 @@
 {
-    "title": "Task List", 
+    "title": "My Custom Task List", 
     "data": [
         {
-			"title": "task", 
+			"title": "task1", 
 			"dueDate": "Apr 26, 2024",
 			"label": "dumb stuff",
 			"details": "bjkasdhkajhdslajl"
         }, 
         {
-			"title": "task", 
+			"title": "task2", 
 			"dueDate": "Apr 24, 2024",
 			"label": "dumb stuff",
 			"details": "bjkasdhkajhdslajl"

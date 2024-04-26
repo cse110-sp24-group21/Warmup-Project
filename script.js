@@ -40,10 +40,10 @@ function verifyAndSort(data) {
 
 function importData() {
     let input = document.createElement('input');
-    let toDisplay = null;
     input.type = 'file';
 
     input.onchange = _ => {
+        let toDisplay = null;
         let file = input.files[0];
         // Check if the file type is JSON or if the file name ends with ".json"
         // The console logging is temporary and will be replaced with shown text
@@ -56,7 +56,6 @@ function importData() {
 
             reader.onload = function(event) {
                 const jsonData = JSON.parse(event.target.result);
-                console.log(jsonData);
 
                 if (Array.isArray(jsonData)) {
                     // Something else will need to be done
@@ -84,6 +83,7 @@ function importData() {
                         else {
                             toDisplay = jsonData;
                             toDisplay["data"] = datas;
+                            display(toDisplay);
                         }
                     }
                 }
@@ -101,10 +101,6 @@ function importData() {
     };
 
     input.click();
-
-    if (toDisplay != null) {
-        display(toDisplay);
-    }
 }
 // Code for Color Mode Switch Display
 
