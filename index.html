@@ -11,13 +11,14 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Knewave&display=swap" rel="stylesheet">
 </head>
 <body class="light-mode">
-    <div class="container light-mode" id="container">
+    <div class="container light-mode" id="container" style="background-color: white; color: black;">
         <header>
             <!-- Title + Button Stuff -->
             <h1 class="title">Task List</h1>
             <div class="header-buttons">
                 <img src="images/darkmode.png" alt="Change Color Mode" id="color-mode" onclick="colorChange()">
-                <img src="images/upload-file.png" alt="Upload File" id="upload-image">
+                <img src="images/upload-file.png" alt="Upload File" id="upload-image" onclick="upload()">
+                <input type="file" id="fileInput" accept=".json">
             </div>
         </header>
         <hr>
@@ -27,36 +28,32 @@
                 <!-- List: have a minimum height (vh) -->
                 <ul id="list">
                     <li class="task">
-                        <img src="images/triangle-right-black.svg" alt="Task Icon" class="task-icon light-icon">
-                        <img src="images/triangle-right-white.svg" alt="Task Icon" class="task-icon dark-icon">
+                        <img src="images/triangle-right-black.svg" alt="Task Icon" class="task-icon light-mode-icon right-icon" onclick="toggleIcon(this)">
                         <input class="checkbox" type="checkbox">
                             <h3 class="taskName">Task 1</h5>
                             <p class="due-date">Apr 24, 2024</p>
                             <p class="description" style="display: none;">This is an example of when the dropdown is pressed and the description is shown.</p>
                     </li>
                     <li class="task">
-                        <img src="images/triangle-down-black.svg" alt="Task Icon" class="task-icon light-icon">
-                        <img src="images/triangle-down-white.svg" alt="Task Icon" class="task-icon dark-icon">
+                        <img src="images/triangle-down-black.svg" alt="Task Icon" class="task-icon light-mode-icon down-icon" onclick="toggleIcon(this)">
                         <input class="checkbox" type="checkbox">
                         <h3 class="taskName">Task 2</h5>
                         <p class="due-date">Apr 24, 2024</p>
                         <p class="description">This is an example of when the dropdown is pressed and the description is shown.</p>
                     </li>
                     <li class="task">
-                        <img src="images/triangle-down-black.svg" alt="Task Icon" class="task-icon light-icon">
-                        <img src="images/triangle-down-white.svg" alt="Task Icon" class="task-icon dark-icon">
+                        <img src="images/triangle-down-black.svg" alt="Task Icon" class="task-icon light-mode-icon down-icon" onclick="toggleIcon(this)">
                         <input class="checkbox" type="checkbox">
                         <h3 class="taskName">Task 3</h5>
                         <p class="due-date">Apr 24, 2024</p>
-                        <p class="description">This is an example of when the dropdown is pressed and the description is shown.</p>
+                        <p class="description">This is an example of when the dropdown is pressed and the description is shown. How about lot of text.......................................................... </p>
                     </li>
                     <li class="task">
-                        <img src="images/triangle-down-black.svg" alt="Task Icon" class="task-icon light-icon">
-                        <img src="images/triangle-down-white.svg" alt="Task Icon" class="task-icon dark-icon">
+                        <img src="images/triangle-down-black.svg" alt="Task Icon" class="task-icon light-mode-icon down-icon" onclick="toggleIcon(this)">
                         <input class="checkbox" type="checkbox">
                         <h3 class="taskName">Task 4</h5>
                         <p class="due-date">Apr 24, 2024</p>
-                        <p class="description">Not much text</p>
+                        <p class="description">Not much text, but a little more than usual, and even a little more</p>
                     </li>
                 </ul>
             </div>

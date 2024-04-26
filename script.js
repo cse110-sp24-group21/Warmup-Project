@@ -4,52 +4,89 @@
 let bodyElem = document.body;
 const colorBtnImg = document.getElementById("color-mode");
 let containerElem = document.getElementsByClassName("container")[0];
-let lightButtons = document.getElementsByClassName("light-icon");
-let darkButtons = document.getElementsByClassName("dark-icon");
-
+let taskIcons = document.getElementsByClassName("task-icon");
 
 // Color change function based on current color mode
 function colorChange() {
-    console.log(containerElem.classList[1]);
-    console.log(bodyElem.classList[0]);
     if(containerElem.classList[1] == "light-mode") {
         // change to dark mode
         containerElem.style.backgroundColor = "#081236";
         containerElem.style.color = "white";
-        containerElem.classList.remove("light-mode");
-        containerElem.classList.add("dark-mode");
+        containerElem.classList.replace("light-mode", "dark-mode");
+        bodyElem.style.backgroundColor = "#0C1121";
+        bodyElem.classList.replace("light-mode", "dark-mode");
+        for(let i = 0; i < taskIcons.length; i++) {
+            taskIcons[i].classList.replace("light-mode-icon", "dark-mode-icon");
+            if (taskIcons[i].classList[2] == "right-icon") {
+                taskIcons[i].src = "images/triangle-right-white.svg";
+            }
+            else {
+                taskIcons[i].src = "images/triangle-down-white.svg";
+            }
+        }
     }
     else {
         // change to light mode
         containerElem.style.backgroundColor = "white";
         containerElem.style.color = "black";
-        containerElem.classList.remove("dark-mode");
-        containerElem.classList.add("light-mode");
-    }
-    if(bodyElem.classList[0] == "light-mode") {
-        // change to dark-mode
-        bodyElem.style.backgroundColor = "#0C1121";
-        bodyElem.classList.remove("light-mode");
-        bodyElem.classList.add("dark-mode");
-    }
-    else {
-        // change to light mode
+        containerElem.classList.replace("dark-mode", "light-mode");
         bodyElem.style.backgroundColor = "white";
-        bodyElem.classList.remove("dark-mode");
-        bodyElem.classList.add("light-mode");
-    }
-    if(lightButtons[0].style.display == "none") {
-        // make sure its displayed and hide dark
-        for(let i = 0; i < lightButtons.length; i++) {
-            lightButtons[i].style.display = "block";
-            darkButtons[i].style.display = "none";
-        }
-    }
-    else {
-        // make sure dark is displayed and hide light
-        for(let i = 0; i < darkButtons.length; i++) {
-            darkButtons[i].style.display = "block";
-            lightButtons[i].style.display = "none";
+        bodyElem.classList.replace("dark-mode", "light-mode");
+        for(let i = 0; i < taskIcons.length; i++) {
+            taskIcons[i].classList.replace("dark-mode-icon", "light-mode-icon");
+            if (taskIcons[i].classList[2] == "right-icon") {
+                taskIcons[i].src = "images/triangle-right-black.svg";
+            }
+            else {
+                taskIcons[i].src = "images/triangle-down-black.svg";
+            }
         }
     }
 };
+
+/* Toggle Functionality */
+function toggleIcon(el) {
+    const task = el.parentNode;
+    const description = task.getElementsByClassName('description')[0];
+    //change from down to right
+    if (el.classList[2] == 'down-icon') {
+        el.classList.replace('down-icon', 'right-icon');
+        description.style.display = 'none';
+        if (el.classList[1] == 'light-mode-icon') {
+            el.src = 'images/triangle-right-black.svg';
+        }
+        else {
+            el.src = 'images/triangle-right-white.svg';
+        }
+    }
+    // change from right to down
+    else {
+        el.classList.replace('right-icon', 'down-icon')
+        description.style.display = 'block';
+        if (el.classList[1] == 'light-mode-icon') {
+            el.src = 'images/triangle-down-black.svg';
+        }
+        else {
+            el.src = 'images/triangle-down-white.svg';
+        }
+    }
+}
+
+/* WORK IN PROGRESS */
+
+/* Upload JSON file and store in data directory */
+function upload() {
+    document.getElementById('fileInput').click();
+    const fileStream = document.getElementById('fileInput');
+    const newFile = fileStream.target.files[0];
+    if (newFile && newFile.type == 'application/json') {
+        const r = new FileReader();
+        // will implement (first read raw JSON)
+    }
+}
+
+function display(taskData) {
+    const listContainer = document.getElementById("list");
+    listContainer.innerHTML = ''; // empty list
+    // foreach loop through tasks
+}
