@@ -26,6 +26,7 @@ html, body {
     flex-grow: 1; 
     display: flex;
     flex-direction: column;
+    width: 100%;
 }
 
 hr {
@@ -72,7 +73,7 @@ header button {
 
 .list-container {
     height: 70vh;
-    width: 80vh;
+    width: 100%;
     overflow-x: hidden;
     overflow-y: auto;
 }
@@ -137,14 +138,9 @@ ul li {
 .task, .detail-container {
     display: grid;
     grid-template-columns: 10% 10% 50% 30%;
+    width: 100%;
 }
 
-.task {
-    flex: 1;
-    justify-content: space-between;
-    align-items: center;
-    padding-bottom: 0.5em;
-}
 .task img{
     padding-left: 30%;
 }
@@ -161,16 +157,12 @@ footer {
     text-align: center;
     align-items: center;
     justify-content: center;
-    /* padding: 0px; */
+    padding: 0px;
     font-size: 0.9em;
     margin-top: auto; /* Push footer to the bottom of the container */
 }
 
 .footer-content {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    right: 0;
     background-color: #f2f2f2;
 }
 
