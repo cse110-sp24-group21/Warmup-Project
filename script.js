@@ -2,6 +2,41 @@ var DEFAULT_TITLE_MESSAGE = "Unnamed Task List";
 var DATA_FIELDS = ["title", "dueDate", "label", "details"];
 /* Upload JSON file and store in data directory */
 
+/**
+ * This method sorts our dates since they are stored as strings
+ * 
+ * @param list of dates
+ * @returns sorted list of dates
+ */
+function sortDates(datas) {
+    return datas.sort((task1, task2) => {
+        let date1 = task1.dueDate;
+        let date2 = task2.dueDate;
+
+        //sort by year first
+        let year1 = parseInt(date1.substring(8, 12));
+        let year2 = parseInt(date2.substring(8, 12));
+        if (year1 !== year2) {
+            return year1 - year2;
+        }
+        //then sort by month
+        let month1 = parseInt(date1.substring(0, 3));
+        let month2 = parseInt(date2.substring(0, 3));
+        if (month1 < month2) {
+            return -1;
+        } else if (month1 > month2) {
+            return 1;
+        }
+        //then sort by day
+        let day1 = parseInt(date1.substring(4, 6));
+        let day2 = parseInt(date2.substring(4, 6));
+        if (day1 !== day2) {
+            return day1 - day2;
+        }
+        return 0; //dates are the same
+    });
+}
+
 function isPlainObject(obj) {
     // Check if the object is not null and its type is "object"
     if (obj !== null && typeof obj === 'object') {
