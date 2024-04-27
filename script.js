@@ -79,9 +79,8 @@ function verifyAndSort(data) {
             }
         }
     }
-    sortDates(data);
+    data = sortDates(data);
     return data;
-    // return returnData;
 }
 
 function importData() {
