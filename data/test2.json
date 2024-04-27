@@ -1,0 +1,29 @@
+{
+    "title": "My Custom Task List", 
+    "data": [
+        {
+			"title": "Christmas", 
+			"dueDate": "Dec 25, 2024",
+			"label": "dumb stuff",
+			"details": "bjkasdhkajhdslajl"
+        }, 
+        {
+			"title": "task2", 
+			"dueDate": "Apr 26, 2024",
+			"label": "dumb stuff",
+			"details": "bjkasdhkajhdslajl"
+        }, 
+        {
+			"title": "task1", 
+			"dueDate": "Apr 24, 2024",
+			"label": "dumb stuff",
+			"details": "bjkasdhkajhdslajl"
+        }, 
+        {
+			"title": "A Task with a long name", 
+			"dueDate": "Jan 1, 1970",
+			"label": "dumb stuff",
+			"details": "bjkasdhkajhdslajl"
+        } 
+    ]
+}
