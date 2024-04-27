@@ -1,6 +1,55 @@
 var DEFAULT_TITLE_MESSAGE = "Unnamed Task List";
 var DATA_FIELDS = ["title", "dueDate", "label", "details"];
+var MONTHS = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
 /* Upload JSON file and store in data directory */
+
+function getYear(str) {
+    return parseInt(str.substring(str.indexOf(',') + 2, str.length));
+}
+
+function getMonth(str) {
+    return MONTHS.indexOf(str.substring(0, 3));    
+}
+
+function getDay(str) {
+    return parseInt(str.substring(str.indexOf(' ') + 1, str.indexOf(',')));    
+}
+
+/**
+ * This method sorts our dates since they are stored as strings
+ * 
+ * @param list of dates
+ * @returns sorted list of dates
+ */
+
+function sortDates(datas) {
+    return datas.sort((task1, task2) => {
+        let date1 = task1.dueDate;
+        let date2 = task2.dueDate;
+
+        //sort by year first
+        let year1 = getYear(date1);
+        let year2 = getYear(date2);
+        if (year1 !== year2) {
+            return year1 - year2;
+        }
+        //then sort by month
+        let month1 = getMonth(date1);
+        let month2 = getMonth(date2);
+        if (month1 < month2) {
+            return -1;
+        } else if (month1 > month2) {
+            return 1;
+        }
+        //then sort by day
+        let day1 = getDay(date1);
+        let day2 = getDay(date2);
+        if (day1 !== day2) {
+            return day1 - day2;
+        }
+        return 0; //dates are the same
+    });
+}
 
 function isPlainObject(obj) {
     // Check if the object is not null and its type is "object"
@@ -13,14 +62,10 @@ function isPlainObject(obj) {
     return false;
 }
 
-// NOTE: Currently doesn't sort
 function verifyAndSort(data) {
-    // returnData is the sorted data to return, or it will return null (Not used currently)
-    // returnData = [];
     if (Array.isArray(data)) {
         for (const element of data) {
             if (isPlainObject(element)) {
-                // In future, it would add values into returnData in a sorted manner.
                 for (const field of DATA_FIELDS) {
                     if (!(field in element)) {
                         console.log("does not have field: " + field);
@@ -34,8 +79,8 @@ function verifyAndSort(data) {
             }
         }
     }
+    data = sortDates(data);
     return data;
-    // return returnData;
 }
 
 function importData() {
