@@ -152,26 +152,27 @@ function colorChange() {
 function toggleIcon(el) {
     const task = el.parentNode;
     const description = task.getElementsByClassName('description')[0];
+    const image = el.getElementsByTagName('img')[0];
     //change from down to right
-    if (el.classList[2] == 'down-icon') {
-        el.classList.replace('down-icon', 'right-icon');
+    if (image.classList[2] == 'down-icon') {
+        image.classList.replace('down-icon', 'right-icon');
         description.style.display = 'none';
-        if (el.classList[1] == 'light-mode-icon') {
-            el.src = 'images/triangle-right-black.svg';
+        if (image.classList[1] == 'light-mode-icon') {
+            image.src = 'images/triangle-right-black.svg';
         }
         else {
-            el.src = 'images/triangle-right-white.svg';
+            image.src = 'images/triangle-right-white.svg';
         }
     }
     // change from right to down
     else {
-        el.classList.replace('right-icon', 'down-icon')
+        image.classList.replace('right-icon', 'down-icon')
         description.style.display = 'block';
-        if (el.classList[1] == 'light-mode-icon') {
-            el.src = 'images/triangle-down-black.svg';
+        if (image.classList[1] == 'light-mode-icon') {
+            image.src = 'images/triangle-down-black.svg';
         }
         else {
-            el.src = 'images/triangle-down-white.svg';
+            image.src = 'images/triangle-down-white.svg';
         }
     }
 }
@@ -203,8 +204,8 @@ function display(taskData) {
     const listContainer = document.getElementById("list");
     listContainer.innerHTML = ''; // empty list
     const arrow = (containerElem.classList[1] == "light-mode")? 
-            '<img src="images/triangle-right-black.svg" alt="Task Icon "class="task-icon light-mode-icon right-icon" onclick="toggleIcon(this)">'
-            : '<img src="images/triangle-right-white.svg" alt="Task Icon "class="task-icon dark-mode-icon right-icon" onclick="toggleIcon(this)">';
+            '<button class="dropdown-btn" onclick="toggleIcon(this)"><img src="images/triangle-right-black.svg" alt="Task Icon "class="task-icon light-mode-icon right-icon" onclick="toggleIcon(this)"></button>'
+            : '<button class="dropdown-btn" onclick="toggleIcon(this)"><img src="images/triangle-right-white.svg" alt="Task Icon "class="task-icon dark-mode-icon right-icon" onclick="toggleIcon(this)"></button>';
     for(let i=0; i<taskData.data.length; i++){
         listContainer.innerHTML += '<li class="task">'
                 + arrow 

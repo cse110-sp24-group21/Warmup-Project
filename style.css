@@ -121,6 +121,11 @@ ul li {
     word-wrap: break-word;
 }
 
+.dropdown-btn {
+    background-color: transparent;
+    border-width: 0px;
+}
+
 .due-date {
     display: block;
     margin: 5px;
@@ -149,7 +154,7 @@ ul li {
     margin: 5px;
     font-family: Inter;
 }
-
+/* footer */
 footer {
     background-color: #f2f2f2;
     color: #333;
